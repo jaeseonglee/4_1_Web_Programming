@@ -1,0 +1,38 @@
+<!-- 웹 프로그래밍 3주차 개념 확인 8번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>개념 확인 8번</title>
+	</head>
+	<body>
+		<h1>선택사항을 직접 입력하세요.</h1>
+        <br>
+        <form>      <!-- 입력 양식 영역 생성-->
+            <fieldset>  
+                <legend>학술지정보</legend>  <!-- 입력 양식을 그룹으로 묶고 이름을 지정-->
+                <p>
+                전공 분야 : <input type=“text” list="major"> 
+                    <datalist id="major">  <!-- datalist 태그 -->
+                    <option value="소프트웨어융합대학">
+                    <option value="빅데이터전공">
+                    <option value="스마트IOT">
+                    <option value="콘텐츠IT">
+                    </datalist>
+                </p>
+                <p>
+                등록일 : <input type="date">  <!-- 시간 정보 입력-->
+                </p>
+
+                <p>
+                메일 수신 : <input type="radio" name="mail" value="1"> 수신동의 <!-- 라디오버튼-->
+                    <input type="radio" name="mail" value="2"> 수신거부<br>
+                </p>
+
+                <input type="submit" value="전송">      <!-- 버튼 생성, submit은 제출, button은 그냥 버튼이다.-->
+                <input type="button" value="취소">
+            </fieldset>
+        </form>
+	</body>
+</html>
+		
