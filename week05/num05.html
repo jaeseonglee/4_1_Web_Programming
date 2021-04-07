@@ -1,0 +1,63 @@
+<!-- 웹 프로그래밍 5주차 개념 활용 5번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 5번</title>
+        <style>
+            .header{color: steelblue;}
+            hr{
+                height: 5px;
+                width: 300px;
+                margin-left: 0px;
+                background-color: red;
+            }
+            mark{
+                color: white;
+                background-color: brown;
+            }
+            strong{
+                color: red;
+            }
+            em{
+                color: blue;
+            }
+            body > ul > li:nth-child(n+5) {
+                font-weight: bold;  /*문제의 해당 부분이 볼드체로 보여서 볼드체로 지정*/
+                color: chartreuse;
+            }
+            /*li가 4개 밖에 없는데 왜 5번째로 지정 되는 것인지 전혀 모르겠음
+            1번째는 모임 불가를 가리키고
+            3번째는 여행 불가를 가리키고
+            5번째는 비대면~~을 가리킴 */
+
+        </style>
+    </head>
+    <body>
+        <h2 class="header">코로나로 불편한 것</h2>
+        <hr>
+        <ul>
+            <li>
+            <mark>모임 불가 </mark>
+                <ul>
+                    <li><strong>동아리 모임</strong></li>
+                    <li><strong>동호회 모임</strong></li>
+                    <li><strong>친구 모임</strong></li>
+                </ul>
+            </li>
+            <br>
+            <li>
+            <mark>여행 불가</mark>
+                <ol>
+                    <li><em>국내여행</em></li>
+                    <li><em>해외여행</em></li>
+                    <li><em>배낭여행</em></li>
+                    <li><em>크루즈여행</em></li>
+                </ol>
+            </li>
+            <br>
+            <li>비대면으로 이루어지는 모든 활동</li>
+            <li>기타 불편한 것을 추가해 보세요</li>
+        </ul>
+    </body>
+</html>
