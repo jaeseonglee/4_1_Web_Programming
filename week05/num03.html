@@ -1,0 +1,60 @@
+<!-- 웹 프로그래밍 5주차 개념 활용 3번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 3</title>
+        <style>
+            div{
+                margin: 10px;
+                width: 400px;
+                padding: 20px;
+            }
+            .position{
+                height: 200px;
+                background-size: 80px 70px;
+                background-image: url('./달과 구름.jpg');
+                background-color: wheat;
+                background-repeat: no-repeat;
+                background-position: bottom center;
+            }
+            .pseudo{
+                height: 80px;
+                border: 1px blue solid;
+            }
+            div.pseudo input[type='text'] {
+                border-radius: 10px;
+            }
+            p{
+                text-align: center;
+                font-size: 14px;
+                font-weight: bold;
+                color: teal;
+            }
+            span{
+                color: white;
+            }
+            span:hover{
+                color: tomato;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>박스 모델</h1>
+        <div class="position">
+            박스모델 배경 꾸미기 입니다<br>
+            이미지 반복은 없으며<br>
+            이미지는 박스 아래쪽 가운데에 위치합니다
+        </div>
+        <div class="pseudo">
+            <p>
+                <label for="id">아이디</label>
+                <input type="text" id="id"><br>
+            </p>
+            <p>
+                질문 : 가상 클래스 선택자는 (<span> :콜론 </span>) 기호를 사용합니다 <br>
+                정답을 알려면 괄호안에 마우스를 가져 가세요<br>
+            </p>
+        </div>
+    </body>
+</html>
