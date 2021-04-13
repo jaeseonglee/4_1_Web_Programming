@@ -1,0 +1,44 @@
+<!-- 웹 프로그래밍 6주차 개념 활용 1번-->
+<!-- 빅데이터전공 20165153 이재성-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>리스트로 메뉴 만들기 개념 활용 1번</title>
+        <style>
+            #menu {
+                background: olive;
+            }
+            #menu ul {
+                margin: 0;
+                padding: 0;
+                /*height: 30px;*/ /*부모에 height를 써서 float를 쓸 수 있게 함.  */
+                width: 567px;
+            }
+            #menu ul li {
+                /*float: left;*/   /*float를 쓸것이면 부모에 height를 사용*/
+                display: inline-block;
+                list-style-type: none;
+                padding: 0px 15px; /*top,bottom은 0 left,right는 15px*/
+            }
+            #menu ul li a{
+                color:  white;
+                text-decoration: none; /*링크 보이지 않기*/
+            }
+            #menu ul li a:hover {
+                color: violet;
+            }
+        </style>
+    </head>
+    <body>
+        <nav id = "menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Espresso</a></li>
+                <li><a href="#">Cappuccino</a></li>
+                <li><a href="#">Cafe Latte</a></li>
+                <li><a href="#">F.A.Q</a></li>
+            </ul>
+        </nav>
+    </body>
+</html>
