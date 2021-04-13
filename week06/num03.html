@@ -1,0 +1,71 @@
+<!-- 웹 프로그래밍 6주차 개념 활용 3번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 3번</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .mainmenu{
+                background: #333;
+                height: 35px;   /*부모는 height로 영역을 명확히 해줌*/
+                width: 500px;
+                padding-left: 40px;
+            }
+            .mainmenu ul {
+                background: #666;
+                display: none; /*디스플레이는 영역을 차지하지 않음*/
+            }
+            .mainmenu > li {
+                float: left; /*float 속성*/
+                /*display: inline-block;*/
+                list-style-type: none; /*앞에 그 마커 기호를 없애준다*/
+                margin-right: 30px;
+                line-height: 35px;
+                color: #fff;
+            }
+            .mainmenu > li:hover ul {
+                display: block;
+                position: absolute;
+                /*이 포지션의 기준은 html페이지의 왼쪽 상단 지점이 기준*/
+            }
+            .mainmenu > li ul li {
+                padding: 0 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="mainmenu">
+            <li>대학소개    <!--서브 메뉴들을 나타내기 위해 명확히 작성해야 함-->
+                <ul>
+                    <li>교육이념</li>
+                    <li>대학상징</li>
+                    <li>캠퍼스안내</li>
+                </ul>
+            </li>
+            <li>전공
+                <ul>
+                    <li>소프트웨어 융합 대학</li>
+                    <li>나노 융합 스쿨</li>
+                    <li>미래 융합 스쿨</li>
+                </ul>
+            </li>
+            <li>대학생활
+                <ul>
+                    <li>프로그램</li>
+                    <li>장학제도</li>
+                    <li>캘린더</li>
+                </ul>
+            </li>
+            <li>학사지원
+                <ul>
+                    <li>수업</li>
+                    <li>등록</li>
+                </ul>
+            </li>
+        </ul>
+    </body>    
+</html>
