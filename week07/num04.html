@@ -1,0 +1,55 @@
+<!-- 웹 프로그래밍 7주차 개념 활용 4번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 4번</title>
+        <style>
+            body {
+                width: 70vw;
+                margin: 10px auto;
+                color: white;
+                text-align: center;
+            }
+            #middle{                        
+                overflow: hidden;   /*One Ture 레이아웃-> 부모 overflow 속성에 hidden 적용*/
+                display: flex;      /*플렉스 박스 사용*/
+                justify-content: space-between; /*space-between으로 처음과 끝을 양옆에 정렬*/
+            }    
+
+            div div {
+                width: 300px;
+                height: 300px;
+                line-height: 300px; /*글자 정렬을 위해 line-height를 height와 같은 크기로 설정*/
+            }
+
+            #top {
+                background-color: green;
+            }
+            #left {
+                background-color: red;
+                margin: 5px 5px 5px 0;
+            }
+            #center {
+                background-color: purple;
+                margin: 5px;
+            }
+            #right {
+                background-color: blue;
+                margin: 5px 0 5px 5px;
+            }
+            #bottom {
+                background-color: brown;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="top">top</div>
+        <div id="middle">
+            <div class="item" id="left">left</div>
+            <div class="item" id="center">center</div>
+            <div class="item" id="right">right</div>
+        </div>
+        <div id="bottom">bottom</div>
+    </body>
+</html>
