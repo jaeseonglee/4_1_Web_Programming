@@ -1,18 +1,84 @@
-<body>
-    <nav class="menu_bar">
-        <div class="menu_left">
-           <a href="">Hallym</a>
-        </div>
+<!-- 웹 프로그래밍 7주차 개념 활용 3번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 3번 </title>
+        <style>
+            body { margin: 0; }
+            .menu_bar {
+                display: flex;
+                background-color: aquamarine;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 12px;
+            }
 
-        <ul class="menu_item">
-            <li>대학소개</li>
-            <li>전공</li>
-            <li>대학생활</li>
-            <li>학사지원</li>
-        </ul>
+            .menu_item {
+                display: flex;
+                list-style: none;
+                padding-left: 0;
+            }
 
-        <div class="menu_right">
-            <a href="">smartlead</a>
-        </div>
-    </nav>
-</body>
+            a {
+                text-decoration: none;
+                color: rgb(3, 59, 59);
+                font-weight: bold;
+            }
+
+            .menu_left, .menu_right {
+                font-size: 24px;
+            }
+
+            .menu_item li {
+                padding: 8px 12px;
+            }
+
+            .menu_item li:hover {
+                background-color: blue;
+                border-radius: 5px;
+            }
+
+            /*웹 브라우저의 크기에 따라 보여지는 반응형 웹*/
+            @media screen and (min-width: 500px) and (max-width: 800px ) {
+                .menu_bar {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .menu_item {
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                }
+
+                .menu_item li {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .menu_right {
+                    position: absolute;
+                    right: 10px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav class="menu_bar">
+            <div class="menu_left">
+                <a href="">Hallym</a>
+            </div>
+            <ul class="menu_item">
+                <li>대학소개</li>
+                <li>전공</li>
+                <li>대학생활</li>
+                <li>학사지원</li>
+            </ul>
+            <div class="menu_right">
+                <a href="">smartlead</a>
+            </div>
+        </nav>
+    </body>
+</html>
