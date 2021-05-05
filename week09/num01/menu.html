@@ -4,18 +4,35 @@
 <html>
     <head>
         <title>로그인</title>
+        <style> /*조건5) 모든 레이아웃은 css를 사용하여 적용할 것 */
+                /*조건9) css에서 아이디와 클래스 속성 사용 금지 */
+            ul {
+                position:fixed;                 /*조건3) 부동 속성을 사용하여 한 줄에 메뉴 출력*/
+                width: 400px; height: 50px;     /*조건8) 메뉴 전체 너비는 400px, 높이는 50px, 배경색은 임의로 지정*/
+                background-color: greenyellow;
+            }
 
-        
+            ul li { /*조건6) 각 메뉴는 수평, 수직 정렬을 하고 안쪽 여백은 좌우로 10px, 너비는 100px*/
+                list-style-type: none;      /*조건7) */
+                float: left;
+                width: 100px;           /*너비 100px*/
+                padding: 0 10px;        /*안쪽 여백 좌우 10px*/
+                text-align: center;     /*글자 중앙 정렬*/
+                line-height: 50px;      /*글자의 수직 정렬을 위해 높이와 같이 50px*/
+            }
+            
+            ul li a {   /*조건7) 리스트 마커와 회원가입 밑줄은 모두 제거할 것*/
+                text-decoration: none;
+            }
+        </style>
     </head>
-    <body>
-        <ul>
+    <body>   <!--조건1) 메뉴는 로그인, 로그아웃 회원가입 으로 구성-->
+        <ul> <!--조건2) 순서 없는 리스트 사용-->
             <li>로그인</li>
             <li>로그아웃</li>
             <li>
-                
-                회원가입
+                <a href="./member.html" target="_blank">회원가입</a>  <!--조건4) 회원가입을 클릭하면 "member.html"문서로 이동-->
             </li>
-        </ul>
-
+        </ul> 
     </body>
 </html>

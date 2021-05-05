@@ -1,12 +1,60 @@
 <!-- 웹 프로그래밍 9주차 개념 활용 1번의 member.html-->
 <!-- 빅데이터전공 20165153 이재성-->
 <!DOCTYPE html>
-<html>
-    <head>
+<html>   
+    <head>  
         <title>Document</title>
+        <style>             
+            /*조건8) 모든 속성은 css에서 적용하며 아이디와 클래스 속성은 사용하지 말것*/
 
+            table { /*조건5) 제시된 결과처럼 테이블 출력 – 테두리 색상은 임의로*/
+                border-collapse: collapse;
+                border-color: tomato;
+            }
+
+            tr td:first-child { /*조건4) 첫 번째 열만 배경색적용하고 수평 가운데 정렬 – 색상은 임의로*/
+                background-color: chartreuse;
+                text-align: center;
+            }
+                     
+            /*조건6) 취소와 전송버튼위에 마우스를 두면 배경색이 변경되도록 한다. 단, 색상은 임의로 선택*/
+            /*조건7) 취소와 전송 버튼은 속성 선택자를 사용할 것*/
+            input[type="reset"]:hover, input[type="submit"]:hover {
+                background-color: skyblue;        
+            }
+
+        </style>
     </head>
     <body>
-
+        <form>
+            <table border="1"> 
+                <tbody>
+                    <tr>
+                        <td>        <!--조건2) “아이디”와 “패스워드” 레이블을 클릭하면 포커스가 입력 상자에 위치하도록 한다-->
+                            <label for="id">아이디</label> 
+                        </td>
+                        <td><input type="text" id="id" name="text"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="password">비밀번호</label>
+                        </td>
+                        <td><input type="password" id="password" name="password"></td> <!--조건1) 패스워드 입력란은 입력 글자가 표시되지 않도록 할 것-->
+                    </tr>
+                    <tr>
+                        <td>취미</td>
+                        <td>
+                            <input type="checkbox" name="checkbox">보드타기
+                            <input type="checkbox" name="checkbox">써핑
+                            <input type="checkbox" name="checkbox">게임
+                            <input type="checkbox" name="checkbox">불명하기
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <input type="reset" value="취소"> <!--조건3) 취소 버튼을 클릭하면 입력된 모든 데이터가 취소되도록 한다-->
+            <input type="submit" value="전송">
+        </form> 
     </body>
 </html>
