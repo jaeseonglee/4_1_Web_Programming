@@ -1,0 +1,31 @@
+<!-- 웹 프로그래밍 10주차 개념 활용 2번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 2번</title>
+    </head>
+    <body>
+        <script>
+            function Car(n, d) {
+                this.num = n; // 차량 번호
+                this.distance = d; // 주행 거리
+            }
+
+            Car.prototype.addMileage = function(dist) { // 주행거리를 dist만큼 증가키는 addMileage 메소드
+                document.write(`차량번호 ${this.num}의 주행거리를 ${dist} 증가 <br>`);
+                this.distance += dist;
+            }
+
+            Car.prototype.toString = function() {  // 차량번호와 주행거리를 문자열로 반환하는 toString 메소드
+                return `차량번호 : ${this.num} 주행거리 : ${this.distance} <br>`;
+            }
+
+            let car1 = new Car('30마 3456', 10000); // 객체 생성
+            document.write(car1.toString());        // 값 확인
+            car1.addMileage(100);                   // 100만큼 증가
+            document.write(car1.toString());        // 값 확인
+            
+        </script>
+    </body>
+</html>
