@@ -1,0 +1,45 @@
+<!-- 웹 프로그래밍 10주차 개념 활용 3번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 3번</title>
+    </head>
+    <body>
+        <script>
+            function Account(n, m) {        // Account 생성자
+                this.name = n;              // 예금주 
+                this.money = m;             // 잔액
+            }
+
+            Account.prototype.deposit = function(num) { // 매개변수로 받은 값만큼 잔액을 증가하는 deposit() 메소드
+                this.monet += num;
+                document.write(`${num} 예금 후 상태입니다 <br>`);
+                document.write(`예금주 : ${this.name} <br>`);
+                document.write(`현재 잔액 : ${this.money} <br><br>`);
+            }
+            
+            Account.prototype.withdraw = function(num) {    // 매개변수로 받은 값만큼 감소하는 withdraw 메소드
+                document.write(`${num}을 인출하려고 합니다 <br>`);  
+                if(this.money < num) {                      // 잔액이 적으면 
+                    document.write(`잔액 부족 : ${Math.abs(this.money - num)} <br>`); // 잔액 부족 출력, 부족한 잔액을 알려준다.
+                } else {
+                    document.write(`인출 후 잔액 : ${this.money - num} <br>`);   // 인출 후의 잔액을 알려준다.
+                }
+                this.money -= num;
+            }
+            
+            Account.prototype.display = function() {        // 예금주와 잔액을 출력하는 display 메소드
+                document.write(`현재 상태입니다 <br>`);
+                document.write(`예금주 : ${this.name} <br>`);
+                document.write(`현재 잔액 : ${this.money} <br><br>`);
+            }
+
+            let a = new Account('스크립트', 50000 );     // Account 객체 생성
+            a.display();                                // 값을 확인
+            a.deposit(50000);                           // 50000만큼 잔액 증가
+            a.withdraw(1000000);                        // 1000000만큼 인출 시도
+            
+        </script>
+    </body>
+</html>
