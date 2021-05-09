@@ -1,0 +1,45 @@
+<!-- 웹 프로그래밍 10주차 개념 활용 1번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 1번</title>
+    </head>
+    <body>
+        <script>
+            /*
+            function Album(s, t, tm) {
+                this.singer = s;
+                this.title = t;
+                this.time = tm;
+            }
+
+            Album.prototype.play = function (cnt) {
+                for(let i = 1; i <= cnt; i++) {
+                    document.write(`${this.singer} : ${this.title} => ${i} 번째 재생 <br> `);
+                }
+            }
+
+            let album = new Album('이소라', '바람이 분다', 3.5);
+            album.play(5);
+            */
+
+            // 리터럴을 사용하여 작성하는 문제.
+            let album = {
+                singer : '이소라',  // 프로퍼티 : 값 ,(컴마로 구분)
+                title : '바람이 분다',
+                time : 3.50,
+                
+                play:function(cnt) {
+                    for(let i = 1; i <= cnt; i++) {
+                        document.write(`${this.singer} : ${this.title} => ${i} 번째 재생 <br> `);
+                    }
+                }
+
+            }
+
+            album.play(5);      // play 호출로 출력을 확인
+
+        </script>
+    </body>
+</html>
