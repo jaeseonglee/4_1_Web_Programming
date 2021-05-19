@@ -1,2 +1,39 @@
 <!-- 웹 프로그래밍 11주차 개념 활용 1번-->
 <!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 1번</title>
+
+    </head>
+    <body>
+        <div>
+            <h1>Cities</h1>
+            <ul>
+                <li id="one" class="red">hallym</li>
+                <li id="two" class="red">software</li>
+                <li id="three" class="red">bid data</li>
+                <li id="four">IoT</li>
+            </ul>
+            <input type="button" onclick="domControl()" value="클릭하세요">
+        </div>
+        <script>
+            let domControl = ()=>{  // 클릭에 대한 처리
+                const elems = document.querySelectorAll('li');
+
+                [...elems].forEach(elem =>{ // forEach 문을 통해
+                    if(elem.className == 'red') {   // 클래스 이름이 red면
+                        elem.innerHTML = 'blue';    // 텍스트를 blue로
+                    }
+                    else{
+                        elem.innerHTML = 'black';   // 나머지는 black으로 초기화
+                    }
+                });
+
+                const heading = document.querySelector('h1');   // h1 태그의
+                heading.id = 'heading';             // id를 heading으로
+                heading.innerHTML = heading.id;     // 텍스트도 같은 문자열로 바꿔준다.
+            }
+        </script>
+    </body>
+</html>
