@@ -1,0 +1,54 @@
+<!-- 웹 프로그래밍 11주차 개념 활용 4번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 4번</title>
+    </head>
+    <body>
+        <h3>이곳에 결과를 출력합니다</h3>
+        <input type="button" value="현재 날짜 출력" onclick="toDay()">
+        <br><br>
+        <input type="button" value="n일 후의 날짜 출력" onclick="fuDay()">
+        
+        <script>
+            const heading = document.querySelector('h3');
+
+            let toDay = ()=>{        
+                let d = new Date();
+                let day = new Array('일', '월', '화', '수', '목', '금', '토');
+                let result = new String(); // 빈 문자열 생성
+
+                // '+'를 사용해 문자열과 날짜를 연결하여 지정
+                result += d.getFullYear() + ' 년 ';
+                result += (d.getMonth() + 1) + ' 월 ';
+                result += d.getDate() + ' 일 ';
+                result += day[d.getDay()] + '요일 ';
+
+                if(d.getHours() < 12 ) {
+                    result += '오전 ' + d.getHours() + ' 시 ';
+                } else {
+                    result += '오후 ' + (d.getHours() -12) + ' 시 ';
+                }
+                result += d.getMinutes() + ' 분 ';
+                
+                heading.innerHTML = result;
+            }
+
+            let fuDay = ()=>{
+                let d = new Date();
+                let n = prompt(`며칠 후 입니까?`);
+                let tempDay = new Date(d.setDate(d.getDate() + parseInt(n)) );  // n이 문자열로 입력받았기 때문에 정수형으로 변환
+                
+                let res = new String();
+                res += n + `일 후의 날짜는 `;
+                res += tempDay.getFullYear() + '년 ';
+                res += (tempDay.getMonth()+ 1) + ' 월 ';
+                res += tempDay.getDate() + ' 일';
+
+                heading.innerHTML = res;                
+            }
+
+        </script>
+    </body>
+</html>
