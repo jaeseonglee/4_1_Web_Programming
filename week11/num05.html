@@ -1,0 +1,38 @@
+<!-- 웹 프로그래밍 11주차 개념 활용 5번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>여행지 - 개념 활용 5번</title>
+    </head>
+    <body>
+         <a href="javascript:insert()">이곳을 클릭하여 가고 싶은 여행지를 입력하세요</a>
+         <ul>희망하는 장소입니다</ul>
+         <script>
+            let insert = ()=>{
+                let arr = new Array();
+                while(true) {
+                    let place = prompt(`여행지를 입력하세요. 더 이상 없으면 'f'를 입력하세요`);
+                    if(place == 'f'){
+                        break;
+                    } else{
+                        arr.push(place);
+                    }
+                }
+
+                const elem = document.querySelector('ul'); // 의도된 것인지 모르겠는데 ul 태그라서 숫자가 나오지 않는다.
+                let cnt = 1;
+
+                [...arr].forEach(value=>{ 
+                    if(cnt % 2 != 0 ){ // 여기서 숫자를 넣어줄 필요 없이 ol 태그면 되었을 것 같다.
+                        elem.innerHTML +=  `<li style="color:red">${cnt++}) ${value}</li>`; 
+                    } else{
+                        elem.innerHTML +=  `<li style="color:green">${cnt++}) ${value}</li>`; 
+                    }
+                });
+                
+                elem.style.listStyleType = `none`;  // 리스트 아이템 앞에 제거 
+            }
+        </script>
+    </body>
+</html>
