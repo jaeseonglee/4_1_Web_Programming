@@ -1,0 +1,33 @@
+<!-- 웹 프로그래밍 11주차 개념 활용 2번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 2번</title>
+    </head>
+    <body>
+        <input class="password" type="password" value="hallym">
+        <input type="button" class="button" value="show" onclick="makeClickHandler()">
+        
+        <!-- 
+        <button class="show">show</button> 
+        -->
+
+        <script>
+            const pass = document.querySelector('.password');
+            const show = document.querySelector('.button');
+
+            function makeClickHandler() {
+                let isShow = false;
+                return function() {
+                    pass.setAttribute('type', isShow ? 'password' : 'text')
+                    isShow = !isShow;
+                    show.innerHTML = isShow ? 'hide' : 'show';
+                };
+            }
+
+            show.onclick = makeClickHandler();  // onclick으로 이벤트 처리를 makeClickHandler 함수에 연결
+
+        </script>
+    </body>
+</html>
