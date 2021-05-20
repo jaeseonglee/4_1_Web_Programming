@@ -1,0 +1,33 @@
+<!-- 웹 프로그래밍 11주차 개념 활용 3번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 3번</title>
+        <script>
+            window.onload = function() {
+                let div = document.querySelector('div');
+                div.style.height = '70vh';  // css에서 스타일 지정하듯이 초기화
+                div.style.width = '70vw';
+                div.style.margin = '0 auto';
+                div.style.fontSize = '20px';
+                div.style.color = 'white';
+                div.style.textAlign = 'center';
+                div.style.lineHeight = '70vh';
+
+                let color = new Array('blue', 'red', 'brown', 'green', 'black', 'deeppink', 'yellow', 'skyblue');                
+
+                let index = 0;
+
+                setInterval(function () {
+                    div.style.backgroundColor = color[index++ % color.length];
+                }, 1000);   
+                // 콜백 함수를 받아서 사용,
+            };
+
+        </script>
+    </head>
+    <body>
+        <div>색이 변하는 박스</div>
+    </body>
+</html>
