@@ -1,0 +1,32 @@
+<!-- 웹 프로그래밍 12주차 개념 활용 3번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>new Image()로 이미지 로딩_개념 활용 3번</title>
+        <script>
+            window.onload = function() {    // 미리 로딩해둘 이미지 이름 배열
+                const images = document.querySelector("#myimg");
+                const files = ["./Halltm.PNG","./SmartLEAD.PNG","SW사업단.png","소프트웨어융합대학.png","현장실습지원센터.png"];
+                const imgs = new Array();
+                for(let i = 0; i < files.length; i++) {
+                    imgs[i] = new Image();  // 이미지 객체 생성
+                    imgs[i].src = files[i];  // 이미지를 로딩
+                }
+            
+                let next = 1;
+                images.onclick = function() {
+                    images.src = imgs[next++].src;
+                    //this.src = imgs[next].src;
+                    //next++;
+                    next %= imgs.length;
+                };
+            }
+        </script>
+    </head>
+    <body>
+        <h3>new Image()로 이미지 로딩</h3><hr>
+        <p>이미지를 클릭하면 다음 이미지를 보여줍니다.</p>
+        <img id="myimg" src="./Hallym.PNG" alt=".">
+    </body>
+</html>
