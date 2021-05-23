@@ -1,0 +1,30 @@
+<!-- 웹 프로그래밍 12주차 개념 활용 4번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>입력 없이 다른 창으로 갈 수 없음_개념 활용 4번</title>
+        <script>
+            window.onload = function() {
+                function checkFilled() {
+                    if(this.value == '') {
+                        alert('enter name!');
+                        setTimeout(function(){name.focus();},10);
+                    }
+                }
+                const name = document.getElementById('name');
+                name.focus();                   // 처음화면에서의 포커스
+                name.onblur = checkFilled;      // 포커스를 잃을 떄 발생
+            }
+        </script>
+    </head>
+    <body>
+        <h3>onfocus외 onblur</h3>
+        <hr>
+        <p>이름을 입력하지 않고 다른 창으로 이동할 수 없습니다.</p>
+        <form>
+            이름<input type="text" id="name"><p></p>
+            학번<input type="text">
+        </form>
+    </body>
+</html>
