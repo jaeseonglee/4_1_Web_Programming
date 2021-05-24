@@ -1,0 +1,32 @@
+<!-- 웹 프로그래밍 12주차 개념 활용 7번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>setInterval()로 텍스트 회전_개념 활용 7번</title>
+    </head>
+    <body>
+        <h3>텍스트가 자동 회전 하며, 마우스로 클릭하면 중단합니다.</h3>
+        <hr>
+        <div>
+            <span id="span" style="background-color: yellow;">
+            자동 회전하는 텍스트입니다.</span>      <!--스타일을 인라인 형식으로 태그에 박아 넣음-->
+        </div>
+        <script>
+            // setInterval()을 이용하여 텍스트를 옆으로 반복 회전. 텍스트 위에 마우스를 클릭하면 회전 중단.
+            let span = document.getElementById("span");
+            let timerID =setInterval("doRated()", 200); // 200 밀리초 주기로 doRated() 호출
+            span.onclick = function(e) {
+                clearInterval(timerID);
+            }
+            
+            function doRated() {
+                let str = span.innerHTML;
+                let firstChar = str.substr(0, 1);
+                let remains = str.substr(1, str.length - 1);
+                str = remains + firstChar;
+                span.innerHTML = str;
+            }
+        </script>
+    </body>
+</html>    
