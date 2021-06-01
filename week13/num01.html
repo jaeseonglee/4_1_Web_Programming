@@ -1,0 +1,35 @@
+<!-- 웹 프로그래밍 13주차 개념 활용 1번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 1번</title>
+        <style>
+            h1 {
+                color : red;
+            }
+        </style>
+        <script>
+            window.onload = function () {   // window.onload
+                let value = document.getElementsByTagName('h1');
+                let action = document.querySelector('#tagN');
+                
+                action.addEventListener('click', () => {
+                    let index = Math.floor(Math.random() * value.length);
+                    if(value[index].style.color == 'red') {
+                        value[index].style.color = 'green';
+                    }
+                    else {
+                        value[index].style.color = 'red';
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <h1>1) 문서 객체</h1>
+        <h1>2) 텍스트 노드</h1>
+        <h1>3) 요소 노드</h1>  
+        <input type="button" id="tagN" value="색상 변경 하기">      
+    </body>
+</html>
