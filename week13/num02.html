@@ -1,0 +1,64 @@
+<!-- 웹 프로그래밍 13주차 개념 활용 2번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 2번</title>
+        <script>
+            // 이벤트 핸들러는 이벤트 핸들러 프로퍼티를 사용할 것
+            window.onload = function () {
+                let changeNode = document.querySelector('#changeNode');     // id를 통해 이벤트 등록을 한다.
+                let deleteNode = document.querySelector('#deleteNode');
+                let addNode = document.querySelector('#addNode');
+                
+                changeNode.onclick = function() {                   // 위치를 바꾸는 이벤트 핸들러
+                    let divchild = document.querySelector('#container');
+                    let pchild = document.querySelectorAll('.item');
+                    let index1 = Math.floor(Math.random() * pchild.length);
+                    let index2 = Math.floor(Math.random() * pchild.length);
+                    divchild.insertBefore(divchild.children[index2], divchild.children[index1]);
+                }
+
+                deleteNode.onclick = function() {                   // 임의의 요소를 삭제하는 이벤트 핸들러
+                    let divchild = document.querySelector('#container');
+                    let pchild = document.querySelectorAll('.item');
+                    let index1 = Math.floor(Math.random() * pchild.length);
+                    divchild.removeChild(pchild[index1]);
+                }
+
+                addNode.onclick = function() {                      // 새로운 태그를 만드는 이벤트 핸들러
+                    let pchild = document.querySelectorAll('.item');
+                    const newElem = document.createElement('p');
+                    const newText = document.createTextNode(`${pchild.length + 1})노드 추가`);
+                    newElem.appendChild(newText);
+                    newElem.appendChild = 'item';   
+
+                    newElem.setAttribute("class", "item");
+                    newElem.onclick = function() {      // 새로 만든 p 태그를 기존 p 태그와 같이 하기 위해
+                        let p = this.parentElement;     // 부모 HTML 태그 요소
+                        p.removeChild(this);            // 자신을 부모로부터 제거
+                    };
+                    document.querySelector('div').appendChild(newElem);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <p class="item">1) 사과</p>
+            <p class="item">2) 레몬</p>
+            <p class="item">3) 자두</p>
+            <p class="item">4) 키위</p>
+            <p class="item">5) 포도</p>
+        </div> 
+        <!--이벤트 핸들러는 이벤트 핸들러 프로퍼티를 사용할 것--> 
+        <!--
+        <input type="button" value="자식 요소 순서 변경" onclick="childNodeChange()">
+        <input type="button" value="자식 요소 삭제" onclick="childNodeDelete()">
+        <input type="button" value="자식 요소 추가" onclick="childNodeAdd()">
+        -->
+        <input type="button" value="자식 요소 순서 변경" id="changeNode">
+        <input type="button" value="자식 요소 삭제" id="deleteNode">
+        <input type="button" value="자식 요소 추가" id="addNode">
+    </body>
+</html>
