@@ -1,0 +1,52 @@
+<!-- 웹 프로그래밍 13주차 개념 활용 3번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 3번</title>
+        <script>
+            function pop() {
+                win = window.open('popUp.html', '', 'width=300, height=300');
+                if(win == null) {
+                    alert('팝업이 차단되었습니다.\n팝업 차단을 해제하고 새로고침하세요');
+                }
+                win.moveTo(300,100);
+            }
+
+            function winOpen() {
+                let keyword = document.getElementById('keyword');
+                let place = 'width=500, height=500, top=300, left=300';
+                switch (keyword.value) {
+                    case '한림대학교':
+                        win = window.open('https://www.hallym.ac.kr', '_blank', place);
+                        win.moveBy(100, 100);
+                        break;
+                    case '도서관':
+                        win = window.open('https://library.hallym.ac.kr', '_blank', place);
+                        win.moveTo(100, 100);
+
+                    case '스마트리드':
+                        win = window.open('https://smartlead.hallym.ac.kr', '_blank', place);
+                        break;
+                }
+                keyword.value='';
+            }
+
+            let winClose = function() {
+                win.winClose();
+            }
+            
+            let win = null;
+            window.onload = pop;
+        </script>        
+    </head>
+    <body>
+        <h3>윈도우 객체 활용</h3>
+        <hr>
+        <form>
+            키워드를 입력하세요 : <input type="text" id="keyword"><p></p>
+            <input type="button" value="open" onclick="winOpen()">
+            <input type="button" value="close" onclick="winClose()">
+        </form>
+    </body>
+</html>
