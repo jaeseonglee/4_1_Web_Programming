@@ -1,0 +1,102 @@
+<!-- 웹 프로그래밍 13주차 개념 활용 4번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 4번</title>
+        <script>
+            //이벤트 핸들러는 addEventListener 메소드를 사용할 것
+            function Mem(id, pass) {
+                this.id = id;
+                this.pass = pass;
+                this.toString = function () {
+                    return `id = ${this.id.value}, pass = ${this.pass.value}`;
+                }
+            }
+
+            const member = () => {
+                let id = document.querySelectorAll('input')[0];
+                let pass = document.querySelectorAll('input')[1];
+                return new Mem(id, pass);
+            }
+
+            const ch_focus = (id, pass)=> {     // keydown 이벤트에 대해 id, pass 각각 등록
+                // id
+                /*
+                id.onkeydown = function () {
+                    // 글자 개수가 8개 이상일 경우
+                    if (8 <= id.value.length) {
+                        pass.focus()    // pass 문서 객체로 포커스 이동
+                    }
+                };
+                */
+
+                id.addEventListener('keydown', function() {
+                    if (8 <= id.value.length) {
+                        pass.focus()    // pass 문서 객체로 포커스 이동
+                    }
+                });
+
+                // pass
+                /*
+                pass.onkeydown = function (event) {
+                    // 사용자의 입력이 백스페이스익 입력된 글자가 없는 경우
+                    if (event.keyCode == 8 && pass.value.length == 0) {
+                        id.focus();
+                    } 
+                };
+                */
+
+                pass.addEventListener('keydown', function() {
+                    if (event.keyCode == 8 && pass.value.length == 0) {
+                        id.focus();
+                    } 
+                });
+            }
+
+            const check = () => {
+                let data = member();
+                ch_focus(data.id, data.pass);
+            }
+
+            const clear = (data) => {
+                data.id.value = '';
+                data.pass.value= '';
+            }
+
+            const process = () => {
+                let con = document.getElementById('container');
+                let newP = document.createElement('p');
+                let data = member();
+                let newText = document.createTextNode(`${data.toString()}`);
+                
+                newP.appendChild(newText);
+                con.appendChild(newP);
+                alert(` 데이터 처리 완료\n${data.toString()}`);
+                clear(data);
+            }
+
+
+            window.onload = function () {
+                let btn = document.getElementById('add');
+                
+                //btn.onclick = process;    // addEventListener 통해서 이벤트 핸들러 등록
+                btn.addEventListener('click', process);
+
+                check();
+            };
+        </script>
+    </head>
+    <body>
+        <form>
+            id : <input type="text" maxlength="8">
+            <p></p>
+            pass : <input type="text" maxlength="8">
+            <p></p>
+            <input type="button" value="추가하기" id="add">
+        </form>
+        <h3>------ input list -------</h3>
+        <hr>
+        <div id='container'></div>        
+    </body>
+</html>
