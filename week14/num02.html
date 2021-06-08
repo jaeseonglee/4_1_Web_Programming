@@ -1,0 +1,36 @@
+<!-- 웹 프로그래밍 14주차 개념 활용 2번-->
+<!-- 빅데이터전공 20165153 이재성-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>개념 활용 2번</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script>
+            $(function () {
+                let $panel = $('#panel');           
+                let count = 0;
+                setInterval(function(){             
+                    let $span = $('<span></sapn>'); // span 태그 객체를 만든다
+                    let fontSize = (Math.floor(Math.random() * 40) + 10) + 'px';    //10부터 40사이의 랜덤 픽셀값을 가지도록 지정
+                    $span.css({                     // css 지정
+                        fontSize:fontSize,          // fontSize 변수를 지정해준다.
+                        display:'inline-block'      // inline-block
+                    });
+                    $span.html(++count);
+                    $panel.append($span);
+                }, 500);                            // 500은 0.5초
+            });
+        </script>
+        <style>
+            #panel {
+                width: 600px;
+                overflow: visible;
+                border: 1px dotted #ccc;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="panel">난수로 생성된 숫자 추가</div>
+    </body>
+</html>
